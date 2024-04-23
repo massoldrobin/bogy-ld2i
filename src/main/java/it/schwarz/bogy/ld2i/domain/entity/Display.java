@@ -5,7 +5,7 @@ import java.util.Arrays;
 public enum Display {
     DISPLAY_0ABE5B6D74D4_35("0ABE5B6D74D4", 384, 180),
     DISPLAY_0ABE5B7D74D5_35("0ABE5B7D74D5", 384, 180),
-    DISPLAY_0AC0F23A70D8_16("0AC0F23A70D8", 100, 100);
+    DISPLAY_0AC0F23A70D8_16("0AC0F23A70D8", 200, 200);
 
     private final String displayId;
     private final int width;
