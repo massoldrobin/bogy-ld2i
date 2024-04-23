@@ -14,7 +14,11 @@ public class FixedValuesInputProvider implements LabelDataProvider {
                 d.getDisplayId(),
                 d.getWidth(),
                 d.getHeight(),
-                "Jacobs Kaffee",
-                new BigDecimal("3.99"));
+                "Apples",
+                new BigDecimal("1.99"),
+                "Big Sale",
+                new BigDecimal("4.99"),
+                "$"
+        );
     }
 }

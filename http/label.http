@@ -1,6 +1,9 @@
 ### Big Display
-GET http://localhost:8080/label?displayId=0ABE5B6D74D4&articleText=test&articlePrice=9.99
+GET http://localhost:8080/label?displayId=0ABE5B6D74D4&articleText=Now Wine for&articlePrice=9.99$&adText=BigSale:Instead of&oldArticlePrice=15.99$
 
 
 ### Small Display
-GET http://localhost:8080/label?displayId=0AC0F23A70D8&articleText=test&articlePrice=1.99
+GET http://localhost:8080/label?displayId=0AC00ABE5B7D74D5F23A70D8&articleText=Now Bananas for&articlePrice=1.99$&adText=BigSale:Instead of&oldArticlePrice=3.49$
+
+### Medium Display
+GET http://localhost:8080/label?displayId=0AC0F23A70D8&articleText=NOW Apples for&articlePrice=4.99$&adText=BigSale:Instead of&oldArticlePrice=9.99$

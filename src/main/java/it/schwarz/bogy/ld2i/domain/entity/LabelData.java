@@ -8,7 +8,10 @@ public record LabelData(
         int displayWidth,
         int displayHeight,
         String articleText,
-        BigDecimal price
+        BigDecimal price,
+        String adText,
+        BigDecimal oldPrice,
+        String currency
 ) {
     public String getCanonicalPrice() {
         DecimalFormat df = new DecimalFormat("0.00");
@@ -16,5 +19,13 @@ public record LabelData(
         df.setMinimumFractionDigits(0);
         df.setGroupingUsed(false);
         return df.format(price);
+    }
+
+    public String getCanonicalOldPrice() {
+        DecimalFormat df = new DecimalFormat("0.00");
+        df.setMaximumFractionDigits(2);
+        df.setMinimumFractionDigits(0);
+        df.setGroupingUsed(false);
+        return df.format(oldPrice);
     }
 }

@@ -5,9 +5,12 @@ import org.slf4j.LoggerFactory;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.font.TextAttribute;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.awt.geom.Rectangle2D;
+import java.util.Map;
 
 public class LabelCreator {
 
@@ -26,18 +29,33 @@ public class LabelCreator {
             Graphics2D ig2 = bi.createGraphics();
 
             // Background
-            ig2.setBackground(Color.BLUE);
+            ig2.setColor(Color.RED);
             ig2.fillRect(0,0, width, height);
 
             // Text
-            Font font = new Font("TimesRoman", Font.BOLD, 20);
-            ig2.setFont(font);
+            Font font = new Font("Arial", Font.BOLD, 20);
             String message = labelData.articleText() + " - " + labelData.getCanonicalPrice();
+            String adMessage = labelData.adText()+ " - ";
+            String oldText = labelData.getCanonicalOldPrice();
+            ig2.setFont(font);
+
             FontMetrics fontMetrics = ig2.getFontMetrics();
-            int stringWidth = fontMetrics.stringWidth(message);
+
+            int stringWidth = fontMetrics.stringWidth(adMessage);
+            int stringWidth2 =fontMetrics.stringWidth(message);
             int stringHeight = fontMetrics.getAscent();
-            ig2.setPaint(Color.black);
-            ig2.drawString(message, (width - stringWidth) / 2, height / 2 + stringHeight / 4);
+
+            ig2.setPaint(Color.YELLOW);
+            ig2.drawString(message,(width - stringWidth2) / 2, height / 2 + stringHeight / 1);
+            ig2.drawString(adMessage, (width - stringWidth) /6, height / 5  + stringHeight / 4);
+
+
+            Map attributes = font.getAttributes();
+            attributes.put(TextAttribute.STRIKETHROUGH, TextAttribute.STRIKETHROUGH_ON);
+            Font newFont = new Font(attributes);
+            ig2.setFont(newFont);
+
+            ig2.drawString(oldText, (width - stringWidth) + 140, height / 5  + stringHeight / 4);
 
             // Picture (e.g. Cheaper)
 

@@ -25,7 +25,7 @@ public class AppConfig {
 
     // NONE = CLI
     // SERVLET = WEB
-    public static final WebApplicationType WEB_APPLICATION_TYPE =  WebApplicationType.SERVLET; // NONE, SERVLET
+    public static final WebApplicationType WEB_APPLICATION_TYPE =  WebApplicationType.NONE; // NONE, SERVLET
 
     @Bean
     LabelDataProvider getLabelDataProvider() {
