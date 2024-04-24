@@ -33,12 +33,13 @@ public class AppConfig {
     }
 
     @Bean
-    @Primary
+
     OutputProvider getFileOutputProvider() {
         return new FileOutputProvider(new File(outputDirectory));
     }
 
     @Bean
+    @Primary
     OutputProvider getRestfulOutputProvider() {
         return new RestfulOutputProvider(outputServer);
     }

@@ -11,7 +11,9 @@ public record LabelData(
         BigDecimal price,
         String adText,
         BigDecimal oldPrice,
-        String currency
+        String currency,
+        String attentionText,
+        String nowText
 ) {
     public String getCanonicalPrice() {
         DecimalFormat df = new DecimalFormat("0.00");

@@ -28,7 +28,9 @@ public class RestfulInputProvider {
             @RequestParam BigDecimal articlePrice,
             @RequestParam String adText,
             @RequestParam BigDecimal oldArticlePrice,
-            @RequestParam String currency) {
+            @RequestParam String currency,
+            @RequestParam String attentionText,
+            @RequestParam String nowText) {
 
         Display display = Display.byId(displayId);
 
@@ -40,7 +42,9 @@ public class RestfulInputProvider {
                 articlePrice,
                 adText,
                 oldArticlePrice,
-                currency);
+                currency,
+                attentionText,
+                nowText);
         return createLabelUseCase.createLabelAndReturn(labelData);
     }
 }
