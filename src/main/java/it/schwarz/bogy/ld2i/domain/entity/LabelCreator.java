@@ -60,7 +60,7 @@ public class LabelCreator {
             ig2.setColor(Color.WHITE);
             ig2.fillRect(0,0, width, height);
 
-            ig2.setColor(Color.RED);
+            ig2.setColor(Color.YELLOW);
             ig2.fillRect(5,5, width -10, height -10);
 
             ig2.setColor(Color.WHITE);
@@ -69,13 +69,13 @@ public class LabelCreator {
 
 
             if(width == 200 && height == 200) {
-                Font fontAdSmall = new Font("Arial", Font.BOLD, 25);
+                Font fontAdSmall = new Font("Arial", Font.BOLD, 30);
                 Font fontSmall = new Font("Arial", Font.BOLD, 13);
                 Font fontNOWSmall = new Font("Arial", Font.BOLD, 23);
 
-                ig2.setPaint(Color.RED);
+                ig2.setPaint(Color.YELLOW);
                 ig2.setFont(fontAdSmall);
-                ig2.drawString(attention, (width - stringWidthAttention) / 4 , height / 10 * 2);
+                ig2.drawString(attention, (width - stringWidthAttention) / 5 , height / 20 * 5);
 
                 ig2.setFont(fontNOWSmall);
                 ig2.drawString(attentionNow, (width - stringWithNOW) / 2 ,height / 20 * 11 );
@@ -88,14 +88,14 @@ public class LabelCreator {
                 ig2.drawString(currency, (width- stringWithOldPrice)  / 40 * 37 , height / 20 * 15);
 
                 // creating Strike trough old Price
-                ig2.setColor(Color.RED);
+                ig2.setColor(Color.YELLOW);
                 ig2.fillRect(130,65, 35,2);
 
                 //picture
                 ig2.drawImage(bufferedImage, 20, 77,50,50,null);
 
                 // Barcode
-                ig2.drawImage(BarcodeGenerator.generateEAN13BarcodeImage("400763000011"),25, 160, 150, 25,null);
+                ig2.drawImage(BarcodeGenerator.generateEAN13BarcodeImage("GermanApples"),25, 157, 150, 25,null);
 
             }
             else {
@@ -103,7 +103,7 @@ public class LabelCreator {
                 Font font = new Font("Arial", Font.BOLD, 20);
                 Font fontNOW = new Font("Arial", Font.BOLD, 30);
                 // creating Text at Display
-                ig2.setPaint(Color.RED);
+                ig2.setPaint(Color.YELLOW);
                 ig2.setFont(fontAd);
                 ig2.drawString(attention, (width - stringWidthAttention) / 4, height / 10 * 3);
 
@@ -118,7 +118,7 @@ public class LabelCreator {
                 ig2.drawString(currency, (width - stringWithOldPrice) / 20 * 19, height / 20 * 14);
 
                 // creating Strike trough old Price
-                ig2.setColor(Color.RED);
+                ig2.setColor(Color.YELLOW);
                 ig2.fillRect(238, 83, 55, 2);
 
                 //picture
